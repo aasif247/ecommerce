@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="{{ asset('backend/images/favicon.ico') }}">
 
-    <title>Ecommerce Admin - Dashboard</title>
+    <title>Gadget Shed BD Admin</title>
     
 	<!-- Vendors Style-->
 	<link rel="stylesheet" href="{{ asset('backend/css/vendors_css.css') }}">
@@ -129,7 +129,7 @@
 	      <!-- User Account-->
           <li class="dropdown user user-menu">	
 			<a href="#" class="waves-effect waves-light rounded dropdown-toggle p-0" data-toggle="dropdown" title="User">
-				<img src="backend/images/avatar/1.jpg" alt="">
+				<img src="{{ asset('backend/images/avatar/avatar-1.png') }}" alt="">
 			</a>
 			<ul class="dropdown-menu animated flipInX">
 			  <li class="user-body">
