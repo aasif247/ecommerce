@@ -17,5 +17,11 @@ class AdminProfileController extends Controller
     }
 
 
+    public function AdminProfileEdit(Request $request)
+    {
+        $editData  = Admin::find(1);
+        return view('admin.admin_profile_edit', compact('editData'));
+    }
+
 
 }

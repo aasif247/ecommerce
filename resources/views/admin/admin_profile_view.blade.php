@@ -16,6 +16,8 @@
 
                   <h6 class="widget-user-desc">Admin Email: {{ $adminData->email }} </h5>
 
+                  <a class="btn btn-success mb-5" href="{{ route('admin.profile.edit') }}">Edit Profile</a>
+
                 </div>
 
                 <ul class="box-body flexbox flex-justified text-center" data-overlay="4">

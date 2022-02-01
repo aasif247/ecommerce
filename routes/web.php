@@ -35,6 +35,8 @@ Route::group(['prefix'=> 'admin'],function(){
 	Route::get('/logout', [AdminController::class, 'destroy'])->name('admin.logout');
 
     Route::get('/profile', [AdminProfileController::class, 'AdminProfile'])->name('admin.profile');
+    
+    Route::get('/profile/edit', [AdminProfileController::class, 'AdminProfileEdit'])->name('admin.profile.edit');
 });
 
 
