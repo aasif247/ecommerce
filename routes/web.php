@@ -40,6 +40,10 @@ Route::group(['prefix'=> 'admin'],function(){
     
     Route::post('/profile/update', [AdminProfileController::class, 'AdminProfileStore'])->name('admin.profile.store');
 
+    Route::get('/change/password', [AdminProfileController::class, 'AdminChangePassword'])->name('admin.change.password');
+
+    Route::post('/update/change/password', [AdminProfileController::class, 'AdminUpdateChangePassword'])->name('admin.update.change.password');
+
 });
 
 
