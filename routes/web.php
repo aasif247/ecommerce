@@ -16,7 +16,7 @@ use App\Http\Controllers\Frontend\IndexProfileController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
@@ -24,7 +24,6 @@ Route::group(['prefix'=> 'admin', 'middleware'=>['admin:admin']], function(){
 	Route::get('/login', [AdminController::class, 'loginForm']);
 	Route::post('/login',[AdminController::class, 'store'])->name('admin.login');
 });
-
 
 Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', function () {
     return view('admin.index');
@@ -49,7 +48,7 @@ Route::group(['prefix'=> 'admin'],function(){
 
 //Frontend routes
 
-Route::get('/gsbd', [IndexProfileController::class, 'index']);
+Route::get('/', [IndexProfileController::class, 'index']);
 
 
 

@@ -10,7 +10,14 @@
               <li><a href="#"><i class="icon fa fa-heart"></i>Wishlist</a></li>
               <li><a href="#"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
               <li><a href="#"><i class="icon fa fa-check"></i>Checkout</a></li>
-              <li><a href="#"><i class="icon fa fa-lock"></i>Login</a></li>
+
+              <li>
+                @auth
+                <a href="{{ route('login') }}"><i class="icon fa fa-user"></i>User</a>
+                @else 
+                <a href="{{ route('login') }}"><i class="icon fa fa-lock"></i>Login/Register</a>
+                @endauth        
+              </li>
             </ul>
           </div>
           <!-- /.cnt-account -->
@@ -48,7 +55,7 @@
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-3 logo-holder"> 
             <!-- ============================================================= LOGO ============================================================= -->
-            <div class="logo"> <a href="home.html"> <img src="frontend/assets/images/logo.png" alt="logo" style="width: 50% ; height: 50%"> </a> </div>
+            <div class="logo"> <a href="{{ url('/') }}"> <img src="frontend/assets/images/logo.png" alt="logo" style="width: 50% ; height: 50%"> </a> </div>
             <!-- /.logo --> 
             <!-- ============================================================= LOGO : END ============================================================= --> </div>
           <!-- /.logo-holder -->
