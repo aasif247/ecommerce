@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AdminProfileController;
@@ -46,12 +47,18 @@ Route::group(['prefix'=> 'admin'],function(){
 
 });
 
-//Frontend routes
-
-Route::get('/', [IndexProfileController::class, 'index']);
-
-
+//User routes
 
 Route::middleware(['auth:sanctum,web', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    $id = Auth::user()->id;
+    $user = User::find($id);
+    return view('dashboard',compact('user'));
 })->name('dashboard');
+
+Route::get('/', [IndexProfileController::class, 'index']);
+Route::get('/user/logout', [IndexProfileController::class, 'UserLogout'])->name('user.logout');
+Route::get('/user/profile', [IndexProfileController::class, 'UserProfile'])->name('user.profile');
+Route::post('/user/profile/store', [IndexProfileController::class, 'UserProfileStore'])->name('user.profile.store');
+Route::get('/user/change/password', [IndexProfileController::class, 'UserChangePassword'])->name('change.password');
+
+Route::post('/user/password/update', [IndexProfileController::class, 'UserPasswordUpdate'])->name('user.password.update');

@@ -20,7 +20,7 @@
 				<!-- Sign-in -->			
 <div class="col-md-6 col-sm-6 sign-in">
 	<h4 class="">Forget Password</h4>
-	<p class="">Forgot your password? Don't panic,just give our email address.</p>
+	<p class="">Forgot your password? Don't panic,just give your email address.</p>
 	
 	<form method="POST" action="{{ route('password.email')}}" class="register-form outer-top-xs" role="form">
         @csrf
