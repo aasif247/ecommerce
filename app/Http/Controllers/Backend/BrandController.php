@@ -94,7 +94,7 @@ class BrandController extends Controller
             'alert-type' => 'success'
         );
 
-        return redirect()->route('all.brand')->with($notification);
+        return redirect()->route('brand.all')->with($notification);
 
         };
     }
