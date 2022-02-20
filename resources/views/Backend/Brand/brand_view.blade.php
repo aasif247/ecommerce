@@ -50,22 +50,24 @@
                               <td>{{ $brand->brand_name_bn}}</td>
                               <td><img src="{{ asset($brand->brand_image) }}" style= "width: 100px; height: 70px;">
                               </td>
-                              {{-- <td>{{ $brand->action}}</td> --}}
                               <td>
-                                <div class="row">
+                                {{-- <div class="row">
                                     <div>
                                         <a href="{{ route('brand.edit',$brand->id) }}" type="button" class="btn btn-primary m-2">Edit</a>
                                     </div>
 
                                     <div>
-                                        <form action="{{ route('brand.destroy') }}" method="POST">
+                                        <form action="{{ route('brand.delete',$brand->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <input type="submit" name="submit" value="Delete" class="btn btn-danger m-2">
+                                        <input type="submit" id="delete" class="btn btn-danger m-2">
                                         </form>
                                     </div>
-                                </div>
-                            </td>
+                                </div> --}}
+                                <a href="{{ route('brand.edit',$brand->id) }}" class="btn btn-info">Edit</a>
+
+                                <a href="{{ route('brand.delete',$brand->id) }}" class="btn btn-danger" id="delete" >Delete</a>
+                              </td>
                           </tr>
                          @endforeach 
                       </tbody>

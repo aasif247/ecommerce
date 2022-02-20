@@ -76,6 +76,6 @@ Route::prefix('brand')->group(function(){
 
     Route::post('/update/{id}', [BrandController::class, 'BrandUpdate'])->name('brand.update');
 
-    Route::get('/destroy', [BrandController::class, 'BrandDestroy'])->name('brand.destroy');
+    Route::get('/delete/{id}', [BrandController::class, 'BrandDelete'])->name('brand.delete');
 });
 
