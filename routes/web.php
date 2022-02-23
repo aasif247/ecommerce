@@ -4,6 +4,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\BrandController;
+use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\AdminProfileController;
@@ -125,5 +126,10 @@ Route::prefix('category')->group(function(){
 });
 
 
+// Product All Routes
+Route::prefix('product')->group(function(){
 
+    Route::get('/add', [ProductController::class, 'AddProduct'])->name('add-product');
 
+    Route::get('/manage', [ProductController::class, 'ManageProduct'])->name('manage-product');
+});
