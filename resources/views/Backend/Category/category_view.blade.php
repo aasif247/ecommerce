@@ -51,7 +51,7 @@
                               </td>
                               <td>{{ $category->category_name_en}}</td>
                               <td>{{ $category->category_name_bn}}</td>
-                              <td>
+                              <td width="30%">
                                 <a href="{{ route('category.edit',$category->id) }}" class="btn btn-info">Edit</a>
 
                                 <a href="{{ route('category.delete',$category->id) }}" class="btn btn-danger" id="delete" >Delete</a>
