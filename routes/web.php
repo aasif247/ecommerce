@@ -122,6 +122,8 @@ Route::prefix('category')->group(function(){
     Route::get('/sub/sub/delete/{id}', [SubCategoryController::class, 'SubSubCategoryDelete'])->name('subsubcategory.delete');
 
     Route::get('/subcategory/ajax/{category_id}', [SubCategoryController::class, 'GetSubCategory']);
+    
+    Route::get('/sub-subcategory/ajax/{subcategory_id}', [SubCategoryController::class, 'GetSubSubCategory']);
 
 });
 

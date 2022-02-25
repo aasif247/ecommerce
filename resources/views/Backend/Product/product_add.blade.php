@@ -1,6 +1,7 @@
 @extends('admin.admin_master')
 
 @section('admin')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <div class="container-full">
   <!-- Content Header (Page header) -->
@@ -61,9 +62,12 @@
               <div class="form-group">
                 <h5>SubCategory Select<span class="text-danger">*</span></h5>
                 <div class="controls">
-                  <select name="select" id="select" required class="form-control">
-                    <option value="">Select Your City</option>
+                  <select name="subcategory_id" class="form-control">
+                    <option value="">Select SubCategory</option>
                   </select>
+                  @error('subcategory_id')
+                  <span class="text-danger">{{ $message }}</span></
+                  @enderror
                 </div>
               </div>
              </div> 
@@ -72,9 +76,12 @@
               <div class="form-group">
                 <h5>Sub-SubCategory Select<span class="text-danger">*</span></h5>
                 <div class="controls">
-                  <select name="select" id="select" required class="form-control">
-                    <option value="">Select Your City</option>
+                  <select name="subsubcategory_id" class="form-control">
+                    <option value="">Select Sub-SubCategory</option>
                   </select>
+                  @error('subsubcategory_id')
+                  <span class="text-danger">{{ $message }}</span></
+                  @enderror
                 </div>
               </div>
              </div> 
@@ -341,5 +348,50 @@
   </section>
   <!-- /.content -->
   </div>
+
+  <script type="text/javascript"> 
+    $(document).ready(function(){
+      $('select[name="category_id"]').on('change',function(){
+        var category_id = $(this).val();
+        if(category_id) {
+          $.ajax({
+            url: "{{ url('/category/subcategory/ajax') }}/"+category_id,
+            type:"GET",
+            dataType:"json",
+            success:function(data){
+              var e =$('select[name="subcategory_id"]').empty();
+              $.each(data,function(key,value){
+                $('select[name="subcategory_id"]').append('<option value="'+ value.id +'">' + value.subcategory_name_en + '</option>');
+              });
+            },
+          });
+        }else{
+          alert('danger');
+        }
+      });
+
+
+
+      $('select[name="subcategory_id"]').on('change',function(){
+      var subcategory_id = $(this).val();
+      if(subcategory_id) {
+        $.ajax({
+          url: "{{ url('/category/sub-subcategory/ajax') }}/"+subcategory_id,
+          type:"GET",
+          dataType:"json",
+          success:function(data){
+            var e =$('select[name="subsubcategory_id"]').empty();
+            $.each(data,function(key,value){
+              $('select[name="subsubcategory_id"]').append('<option value="'+ value.id +'">' + value.subsubcategory_name_en + '</option>');
+            });
+          },
+        });
+      }else{
+        alert('danger');
+      }
+    });
+
+    });
+  </script>
 
 @endsection
