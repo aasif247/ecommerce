@@ -93,7 +93,10 @@
               <div class="form-group">
                 <h5>Product Name English <span class="text-danger">*</span></h5>
                 <div class="controls">
-                  <input type="email" name="email" class="form-control" required data-validation-required-message="This field is required"> </div>
+                  <input type="text" name="product_name_en" class="form-control"> </div>
+                  @error('product_name_en')
+                  <span class="text-danger">{{ $message }}</span></
+                  @enderror
               </div>
             </div>
 
@@ -101,15 +104,21 @@
               <div class="form-group">
                 <h5>Product Name Bangla<span class="text-danger">*</span></h5>
                 <div class="controls">
-                  <input type="email" name="email" class="form-control" required data-validation-required-message="This field is required"> </div>
+                  <input type="text" name="product_name_bn" class="form-control" > </div>
+                  @error('product_name_bn')
+                  <span class="text-danger">{{ $message }}</span></
+                  @enderror
               </div>
             </div>
 
             <div class="col-md-4">
               <div class="form-group">
-                <h5>Prodcut Code<span class="text-danger">*</span></h5>
+                <h5>Product Code<span class="text-danger">*</span></h5>
                 <div class="controls">
-                  <input type="email" name="email" class="form-control" required data-validation-required-message="This field is required"> </div>
+                  <input type="text" name="product_code" class="form-control" > </div>
+                  @error('product_code')
+                  <span class="text-danger">{{ $message }}</span></
+                  @enderror
               </div>
             </div>    
 
@@ -127,25 +136,34 @@
 
             <div class="col-md-4">
               <div class="form-group">
-                <h5>Prodcut Quantity<span class="text-danger">*</span></h5>
+                <h5>Product Quantity<span class="text-danger">*</span></h5>
                 <div class="controls">
-                  <input type="email" name="email" class="form-control" required data-validation-required-message="This field is required"> </div>
+                  <input type="text" name="product_qty" class="form-control" > </div>
+                  @error('product_qty')
+                  <span class="text-danger">{{ $message }}</span></
+                  @enderror
               </div>
             </div>
             
             <div class="col-md-4">
               <div class="form-group">
-                <h5>Prodcut Size English<span class="text-danger">*</span></h5>
+                <h5>Product Size English<span class="text-danger">*</span></h5>
                 <div class="controls">
-                  <input type="email" name="email" class="form-control"> </div>
+                  <input type="text" name="product_size_en" class="form-control"> </div>
+                  @error('product_size_en')
+                  <span class="text-danger">{{ $message }}</span></
+                  @enderror
               </div>
             </div> 
 
             <div class="col-md-4">
               <div class="form-group">
-                <h5>Prodcut Size Bangla<span class="text-danger">*</span></h5>
+                <h5>Product Size Bangla<span class="text-danger">*</span></h5>
                 <div class="controls">
-                  <input type="email" name="email" class="form-control"> </div>
+                  <input type="text" name="product_size_bn" class="form-control"> </div>
+                  @error('product_size_bn')
+                  <span class="text-danger">{{ $message }}</span></
+                  @enderror
               </div>     
             </div>
             
@@ -156,25 +174,34 @@
             <!-- start 3rd row  -->
             <div class="col-md-4">
               <div class="form-group">
-                <h5>Prodcut Color English<span class="text-danger">*</span></h5>
+                <h5>Product Color English<span class="text-danger">*</span></h5>
                 <div class="controls">
-                  <input type="email" name="email" class="form-control" required data-validation-required-message="This field is required"> </div>
+                  <input type="text" name="product_color_en" class="form-control" > </div>
+                  @error('product_color_en')
+                  <span class="text-danger">{{ $message }}</span></
+                  @enderror
               </div>
             </div>
 
             <div class="col-md-4">
               <div class="form-group">
-                <h5>Prodcut Color Bangla <span class="text-danger">*</span></h5>
+                <h5>Product Color Bangla <span class="text-danger">*</span></h5>
                 <div class="controls">
-                  <input type="email" name="email" class="form-control" required data-validation-required-message="This field is required"> </div>
+                  <input type="text" name="product_color_bn" class="form-control" > </div>
+                  @error('product_color_bn')
+                  <span class="text-danger">{{ $message }}</span></
+                  @enderror
               </div>
             </div>
 
             <div class="col-md-4">
               <div class="form-group">
-                <h5>Prodcut Tags Engliash<span class="text-danger">*</span></h5>
+                <h5>Product Tags Engliash<span class="text-danger">*</span></h5>
                 <div class="controls">
-                  <input type="email" name="email" class="form-control" required data-validation-required-message="This field is required"> </div>
+                  <input type="text" name="product_tags_en" class="form-control"> </div>
+                  @error('product_tags_en')
+                  <span class="text-danger">{{ $message }}</span></
+                  @enderror
               </div>
             </div>
 
@@ -187,9 +214,12 @@
             <!-- start 4th row  -->
             <div class="col-md-4">
               <div class="form-group">
-                <h5>Prodcut Tags Bangla<span class="text-danger">*</span></h5>
+                <h5>Product Tags Bangla<span class="text-danger">*</span></h5>
                 <div class="controls">
-                  <input type="email" name="email" class="form-control" required data-validation-required-message="This field is required"> </div>
+                  <input type="text" name="product_tags_bn" class="form-control" > </div>
+                  @error('product_tags_bn')
+                  <span class="text-danger">{{ $message }}</span></
+                  @enderror
               </div>
             </div>
 
@@ -197,7 +227,10 @@
               <div class="form-group">
                 <h5>Product Selling Price<span class="text-danger">*</span></h5>
                 <div class="controls">
-                  <input type="email" name="email" class="form-control" required data-validation-required-message="This field is required"> </div>
+                  <input type="text" name="selling_price" class="form-control" > </div>
+                  @error('selling_price')
+                  <span class="text-danger">{{ $message }}</span></
+                  @enderror
                 </div>     
             </div>
 
@@ -205,7 +238,10 @@
               <div class="form-group">
                 <h5>Product Discount Price<span class="text-danger">*</span></h5>
                 <div class="controls">
-                  <input type="email" name="email" class="form-control"> </div>
+                  <input type="text" name="discount_price" class="form-control"> </div>
+                  @error('discount_price')
+                  <span class="text-danger">{{ $message }}</span></
+                  @enderror
               </div>
             </div>
 
@@ -218,7 +254,10 @@
             <div class="form-group">
               <h5>Main Thumbnail<span class="text-danger">*</span></h5>
               <div class="controls">
-                <input type="email" name="email" class="form-control" required data-validation-required-message="This field is required"> </div>
+                <input type="text" name="product_thumbnail" class="form-control" > </div>
+                @error('product_thumbnail')
+                  <span class="text-danger">{{ $message }}</span></
+                @enderror
             </div>
           </div>
 
@@ -226,7 +265,10 @@
             <div class="form-group">
               <h5>Multiple Image<span class="text-danger">*</span></h5>
               <div class="controls">
-                <input type="file" name="file" class="form-control" required> </div>
+                <input type="file" name="" class="form-control" required> </div>
+                @error('')
+                  <span class="text-danger">{{ $message }}</span></
+                @enderror
             </div>
           </div>
 
@@ -236,9 +278,9 @@
             <!-- start 6th row  -->
             <div class="col-md-6">
               <div class="form-group">
-                <h5>Prodcut Short Description English<span class="text-danger">*</span></h5>
+                <h5>Product Short Description English<span class="text-danger">*</span></h5>
                 <div class="controls">
-                  <textarea name="textarea" id="textarea" class="form-control" required placeholder="Textarea text">
+                  <textarea name="short_des_en" id="textarea" class="form-control" required placeholder="Textarea text">
                   </textarea>
                 </div>
               </div>
@@ -246,9 +288,9 @@
 
            <div class="col-md-6">
             <div class="form-group">
-              <h5>Prodcut Short Description Bangla<span class="text-danger">*</span></h5>
+              <h5>Product Short Description Bangla<span class="text-danger">*</span></h5>
               <div class="controls">
-                <textarea name="textarea" id="textarea" class="form-control" required placeholder="Textarea text">
+                <textarea name="short_des_bn" id="textarea" class="form-control" required placeholder="Textarea text">
                 </textarea>
               </div>
             </div>
@@ -260,7 +302,7 @@
           <!-- start 6th row  -->
           <div class="col-md-6">
             <div class="form-group">
-              <h5>Prodcut Long Description English<span class="text-danger">*</span></h5>
+              <h5>Product Long Description English<span class="text-danger">*</span></h5>
               <div class="controls">
                 <textarea name="textarea" id="textarea" class="form-control" required placeholder="Textarea text">
                 </textarea>
@@ -270,7 +312,7 @@
 
          <div class="col-md-6">
           <div class="form-group">
-            <h5>Prodcut Long Description Bangla<span class="text-danger">*</span></h5>
+            <h5>Product Long Description Bangla<span class="text-danger">*</span></h5>
             <div class="controls">
               <textarea name="textarea" id="textarea" class="form-control" required placeholder="Textarea text">
               </textarea>
@@ -280,57 +322,57 @@
 
       </div>
 
-            
+      <hr>
 
+      <div class="row"> 
+        <div class="col-md-6">
             <div class="form-group">
-              <h5>Featured<span class="text-danger">*</span></h5>
               <div class="controls">
-                <input type="email" name="email" class="form-control" required data-validation-required-message="This field is required"> </div>
-            </div>
-            <div class="form-group">
-              <h5>Special Offer<span class="text-danger">*</span></h5>
-              <div class="controls">
-                <input type="email" name="email" class="form-control" required data-validation-required-message="This field is required"> </div>
-            </div>
-            <div class="form-group">
-              <h5>Special Deal<span class="text-danger">*</span></h5>
-              <div class="controls">
-                <input type="email" name="email" class="form-control" required data-validation-required-message="This field is required"> </div>
-            </div>
-            <div class="form-group">
-              <h5>Status<span class="text-danger">*</span></h5>
-              <div class="controls">
-                <input type="email" name="email" class="form-control" required data-validation-required-message="This field is required"> </div>
-            </div>
-            <div class="form-group">
-              <h5>Prodcut Slug Bangla <span class="text-danger">*</span></h5>
-              <div class="controls">
-                <input type="email" name="email" class="form-control" required data-validation-required-message="This field is required"> </div>
-            </div>
-            <div class="form-group">
-              <h5>Prodcut Slug Bangla <span class="text-danger">*</span></h5>
-              <div class="controls">
-                <input type="email" name="email" class="form-control" required data-validation-required-message="This field is required"> </div>
-            </div>
-            
-          </div>
+                <fieldset>
+                  <input type="checkbox" id="checkbox_2" name="hot_deals" value="1">
+                  <label for="checkbox_2">Hot Deals</label>
+                </fieldset>
 
-          
-
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <h5>Checkbox <span class="text-danger">*</span></h5>
-                <div class="controls">
-                  <input type="checkbox" id="checkbox_1" required value="single">
-                  <label for="checkbox_1">Check this custom checkbox</label>
-                </div>								
+                <fieldset>
+                  <input type="checkbox" id="checkbox_3" name="featured" value="1">
+                  <label for="checkbox_3">Featured</label>
+                </fieldset>
               </div>
             </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <div class="controls">
+              <fieldset>
+                <input type="checkbox" id="checkbox_4" name="special_offer" value="1">
+                <label for="checkbox_4">Special Offer</label>
+              </fieldset>
+
+              <fieldset>
+                <input type="checkbox" id="checkbox_5" name="special_deals" value="1">
+                <label for="checkbox_5">Special Deals</label>
+              </fieldset>
+            </div>
           </div>
+      </div>
+      </div>
+
+      {{-- <div class="col-md-6"> --}}
+        <div class="form-group">
+            <h5>Digital Product <span class="text-danger">pdf,xlx,csv*</span></h5>
+          <div class="controls">
+          <input type="file" name="file" class="form-control" > 
+          </div>
+        </div>
+      {{-- </div> --}}
+      <br>
+      <br>
+
+
+           
           
-          <div class="text-xs-right">
+          <div  class="d-flex justify-content-center">
             <input type="submit" class="btn btn-rounded btn-primary mb-5" value="Add Product">
           </div>
           
