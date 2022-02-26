@@ -264,7 +264,7 @@
             <div class="form-group">
               <h5>Main Thumbnail<span class="text-danger">*</span></h5>
               <div class="controls">
-                <input type="text" name="product_thumbnail" class="form-control" > </div>
+                <input type="file" name="product_thumbnail" class="form-control" >
                 @error('product_thumbnail')
                   <span class="text-danger">{{ $message }}</span></
                 @enderror
@@ -276,8 +276,8 @@
             <div class="form-group">
               <h5>Multiple Image<span class="text-danger">*</span></h5>
               <div class="controls">
-                <input type="file" name="" class="form-control" required> 
-                @error('')
+                <input type="file" name="multi_img[]" class="form-control" required> 
+                @error('multi_img')
                   <span class="text-danger">{{ $message }}</span></
                 @enderror
               </div>
@@ -316,7 +316,8 @@
             <div class="form-group">
               <h5>Product Long Description English<span class="text-danger">*</span></h5>
               <div class="controls">
-                <textarea name="textarea" id="textarea" class="form-control" required placeholder="Textarea text">
+                <textarea name="long_des_en" id="editor1" class="form-control" rows="10" cols="80">
+                  Long Description English
                 </textarea>
               </div>
             </div>
@@ -326,7 +327,8 @@
           <div class="form-group">
             <h5>Product Long Description Bangla<span class="text-danger">*</span></h5>
             <div class="controls">
-              <textarea name="textarea" id="textarea" class="form-control" required placeholder="Textarea text">
+              <textarea name="long_des_bn" id="editor2" class="form-control" rows="10" cols="80">
+                Long Description Bangla
               </textarea>
             </div>
           </div>
