@@ -264,10 +264,11 @@
             <div class="form-group">
               <h5>Main Thumbnail<span class="text-danger">*</span></h5>
               <div class="controls">
-                <input type="file" name="product_thumbnail" class="form-control" >
+                <input type="file" name="product_thumbnail" class="form-control" onchange="mainThumbUrl(this)">
                 @error('product_thumbnail')
                   <span class="text-danger">{{ $message }}</span></
                 @enderror
+                <img src="" id="mainThumb">
               </div>
             </div>
           </div>
@@ -276,10 +277,11 @@
             <div class="form-group">
               <h5>Multiple Image<span class="text-danger">*</span></h5>
               <div class="controls">
-                <input type="file" name="multi_img[]" class="form-control" required> 
+                <input type="file" name="multi_img[]" class="form-control" multiple="" id="multiImg"> 
                 @error('multi_img')
                   <span class="text-danger">{{ $message }}</span></
                 @enderror
+                <div class="row" id="preview_img"> </div>
               </div>
             </div>
           </div>
@@ -449,6 +451,47 @@
     });
 
     });
+  </script>
+
+
+<script type="text/javascript">
+   function mainThumbUrl(input){
+     if(input.files && input.files[0]){
+       var reader = new FileReader();
+       reader.onload = function(e){
+         $('#mainThumb').attr('src',e.target.result).width(80).height(80);
+       };
+       reader.readAsDataURL(input.files[0]);
+     }
+   }
+</script>
+
+<script>
+ 
+  $(document).ready(function(){
+   $('#multiImg').on('change', function(){
+      if (window.File && window.FileReader && window.FileList && window.Blob)
+      {
+          var data = $(this)[0].files;
+          $.each(data, function(index, file){ 
+              if(/(\.|\/)(gif|jpe?g|png)$/i.test(file.type)){ 
+                  var fRead = new FileReader();
+                  fRead.onload = (function(file){
+                  return function(e) {
+                      var img = $('<img/>').addClass('thumb').attr('src', e.target.result) .width(80)
+                  .height(80);
+                      $('#preview_img').append(img);
+                  };
+                  })(file);
+                  fRead.readAsDataURL(file);
+              }
+          });
+           
+      }else{
+          alert("Your browser doesn't support File API!");
+   });
+  });
+   
   </script>
 
 @endsection
