@@ -47,7 +47,7 @@
                         @foreach($category as $category)
                           <tr>
                               <td>
-                              <span><i class="{{ $category->category_icon }}"> </i> </span>
+                              <span><i class="{{ $category->category_icon }}" aria-hidden="true"> </i> </span>
                               </td>
                               <td>{{ $category->category_name_en}}</td>
                               <td>{{ $category->category_name_bn}}</td>
