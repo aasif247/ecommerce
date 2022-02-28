@@ -22,7 +22,7 @@
         <form method="post" action="{{ route('product.update') }}" >
           @csrf
           <input type="hidden" name="id" value="{{ $products->id }}">
-          
+
           <div class="row">
           <div class="col-12">			
 
@@ -367,10 +367,7 @@
       {{-- </div> --}}
       <br>
       <br>
-
-
-           
-          
+ 
           <div  class="d-flex justify-content-center">
             <input type="submit" class="btn btn-rounded btn-primary mb-5" value="Update Product">
           </div>
@@ -388,6 +385,124 @@
 
   </section>
   <!-- /.content -->
+
+  <!-----------////// Start Multiple Image Update Area //////-------->
+
+  <section class="content">
+    <div class="row">
+
+        <div class="col-md-12">
+			<div class="box bt-3 border-info">
+				  <div class="box-header">
+					<h4 class="box-title">Product Multiple Image <strong>Update</strong></h4>
+				  </div>
+
+                  <form method="post" action="{{ route('product.image.update') }}" enctype="multipart/form-data">
+                    @csrf
+                    <div class="row row-sm">
+                        @foreach ($multiimgs as $img)
+                        <div class="col-md-3">
+
+                          <div class="card">
+                            <img class="card-img-top" src="{{ asset($img->photo_name) }}" styles="height:120px; width:280px">
+                            <div class="card-body">
+                              <h5 class="card-title">
+
+
+                              <a href=" " class="btn btn-sm btn-danger" id="delete" title="Delete Data"><i class="fa fa-trash"></i></a>
+
+                              </h5>
+                              <p class="card-text">
+                                <div class="form-group">
+                                  <label class="form-control-label"> Change Image 
+                                  <span class="text-danger">*</span>
+                                  </label>
+
+                                  <input class="form-control" type="file" name="multi_img[{{$img->id}}]">
+                                </div>
+                              </p>
+                            </div>
+                          </div>
+
+                        </div>
+                        @endforeach
+                        
+                    </div>
+
+                    <div  class="d-flex justify-content-center">
+                      <input type="submit" class="btn btn-rounded btn-primary mb-5" value="Update Image">
+                    </div>
+
+                    <br><br>
+
+                  </form>
+			</div>
+		</div>
+
+    </div>
+  </section>
+
+  <!-----------////// Start Thumbnail Image Update Area //////-------->
+
+  <section class="content">
+    <div class="row">
+
+        <div class="col-md-4">
+			<div class="box bt-3 border-info">
+				  <div class="box-header">
+					<h4 class="box-title">Thumbnail Image <strong>Update</strong></h4>
+				  </div>
+
+                  <form method="post" action="{{ route('product.thumbnail.update') }}" enctype="multipart/form-data">
+                    @csrf
+
+                    <input type="hidden" name="id" value="{{ $products->id }}">
+                    <input type="hidden" name="old_img" value="{{ $products->product_thumbnail }}">
+
+                    <div class="row row-sm">
+                        <div class="col-md-12">
+
+                          <div class="card">
+                            <img class="card-img-top" src="{{ asset($products->product_thumbnail) }}" styles="height:120px; width:280px">
+                            <div class="card-body">
+                              <h5 class="card-title">
+
+
+                              <a href=" " class="btn btn-sm btn-danger" id="delete" title="Delete Data"><i class="fa fa-trash"></i></a>
+
+                              </h5>
+                              <p class="card-text">
+                                <div class="form-group">
+                                  <label class="form-control-label"> Change Image 
+                                  <span class="text-danger">*</span>
+                                  </label>
+
+                                  <input class="form-control" type="file" name="product_thumbnail" onChange="mainThumbUrl(this)" >
+                                  <img src="" id="mainThmb">
+                                  
+                                </div>
+                              </p>
+                            </div>
+                          </div>
+
+                        </div>
+                        
+                    </div>
+
+                    <div  class="d-flex justify-content-center">
+                      <input type="submit" class="btn btn-rounded btn-primary mb-5" value="Update Image">
+                    </div>
+
+                    <br><br>
+
+                  </form>
+			</div>
+		</div>
+
+    </div>
+  </section>
+
+
   </div>
 
   <script type="text/javascript"> 
